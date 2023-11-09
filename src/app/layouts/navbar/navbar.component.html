@@ -1,0 +1,16 @@
+<div id="mainNavigation">
+    <nav role="navigation">
+      <div class="py-3 text-center img-container">
+        <img src="../../../assets/gg_logo.png" alt="" class="invert">
+      </div>
+    </nav>
+    <div class="navbar-expand-md">
+      <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mx-auto ">
+            <li class="nav-item" *ngFor="let navitem of navitem">
+                <a class="nav-link active" aria-current="page" href="#">{{navitem.title}}</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>

@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.cdnfonts.com/css/cutive');
+:root {
+    --text-color: white;
+
+    --theme-color-1:#1c126d;
+    --theme-color-2:#14045c;
+    --theme-color-3:#140c64;
+    --theme-color-4:#04044c;
+    --theme-color-5:#0c0452;
+    --theme-color-6:#0c045c;
+    --theme-color-7:#241474;
+
+    --theme-hover-color: #05abe5;
+
+}
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+//Main colors
+
+
