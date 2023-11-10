@@ -17,6 +17,6 @@ export const navbar = [
     },
     {
         title: 'Profile',
-        slug: '',
+        slug: 'login',
     },
 ]

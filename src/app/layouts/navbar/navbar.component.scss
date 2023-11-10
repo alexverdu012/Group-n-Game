@@ -1,33 +1,38 @@
-
 #mainNavigation {
-
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    padding-bottom:120px;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-bottom: 100px;
+    backdrop-filter: blur(3px);
     //Shadow fade effect
-    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 1%, rgba(0, 0, 0, 0) 100%);
     .img-container {
         border-bottom: 1px var(--text-color) solid;
         img {
             width: 20em;
             height: 20em;
             margin: -5em;
-           
         }
     }
-    .nav-item { 
-        min-width:12vw;
-        a {
+    .nav-item {
+        min-width: 12vw;
+        span {
             color: var(--text-color);
-            font-size:1.1em;
-            text-transform:uppercase;
-            letter-spacing:2px;
-        } :hover {
-            color: var(--theme-hover-color)
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+        :hover {
+            color: var(--theme-hover-color);
         }
     }
-}  
+}
+
+@media (max-width: 765px) and (min-width: 200px) {
+    #mainNavigation {
+        padding-bottom: 0px;
+    }
+}
