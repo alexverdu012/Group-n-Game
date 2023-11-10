@@ -7,8 +7,8 @@
     <div class="navbar-expand-md">
       <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mx-auto ">
-            <li class="nav-item" *ngFor="let navitem of navitem">
-                <a class="nav-link active" aria-current="page" href="#">{{navitem.title}}</a>
+            <li class="nav-item" *ngFor="let navitem of navitem" [routerLink]="navitem.slug">
+                <span class="nav-link active" aria-current="page">{{navitem.title}}</span>
             </li>
         </ul>
       </div>
