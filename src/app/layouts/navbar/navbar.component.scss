@@ -6,7 +6,6 @@
     z-index: 1000;
     padding-bottom: 100px;
     backdrop-filter: blur(3px);
-    //Shadow fade effect
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 1%, rgba(0, 0, 0, 0) 100%);
     .img-container {
         border-bottom: 1px var(--text-color) solid;
@@ -17,6 +16,15 @@
         }
     }
     .nav-item {
+        .user-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .logout:hover {
+                color: red;
+            }
+        }
         min-width: 12vw;
         span {
             color: var(--text-color);
@@ -34,5 +42,11 @@
 @media (max-width: 765px) and (min-width: 200px) {
     #mainNavigation {
         padding-bottom: 0px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .user-nav {
+        flex-direction: column;
     }
 }

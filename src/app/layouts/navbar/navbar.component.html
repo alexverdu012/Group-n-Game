@@ -1,16 +1,47 @@
 <div id="mainNavigation">
-    <nav role="navigation">
-      <div class="py-3 text-center img-container">
-        <img src="../../../assets/gg_logo.png" alt="" class="invert">
-      </div>
-    </nav>
-    <div class="navbar-expand-md">
-      <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mx-auto ">
-            <li class="nav-item" *ngFor="let navitem of navitem" [routerLink]="navitem.slug">
-                <span class="nav-link active" aria-current="page">{{navitem.title}}</span>
-            </li>
-        </ul>
-      </div>
+  <nav role="navigation">
+    <div class="py-3 text-center img-container">
+      <img src="../../../assets/gg_logo.png" alt="" class="invert" />
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </div>
+  </nav>
+  <div class="navbar-expand-md">
+    <div
+      class="text-center mt-3 collapse navbar-collapse"
+      id="navbarNavDropdown"
+    >
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item" *ngFor="let navitem of navitem">
+          <div *ngIf="navitem.id == 5">
+            <span
+              *ngIf="!isLogged"
+              [routerLink]="navitem.slug"
+              class="nav-link active"
+              aria-current="page"
+              >{{ this.username }}</span
+            >
+
+            <div *ngIf="isLogged" class="user-nav">
+              <span
+                [routerLink]="['profile', id]"
+                class="nav-link active"
+                aria-current="page"
+                >{{ this.username }}</span
+              >
+              <span class="logout" (click)="logout()">↪</span>
+            </div>
+          </div>
+
+          <div *ngIf="navitem.id != 5">
+            <span
+              [routerLink]="navitem.slug"
+              class="nav-link active"
+              aria-current="page"
+              >{{ navitem.title }}</span
+            >
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
+</div>
