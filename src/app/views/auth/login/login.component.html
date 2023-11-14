@@ -55,33 +55,20 @@
     <div class="content">
       <h2>🍒 Sign In 🍒</h2>
       <img src="../../../../assets/pacman-unscreen.gif" alt="" />
-      <div class="form">
+      <form
+        *ngIf="loginForm"
+        [formGroup]="loginForm!"
+        class="form"
+        (ngSubmit)="logUser()"
+      >
         <div class="inputBox">
-          <input type="email" required [(ngModel)]="email" required />
-          <i
-            [style]="
-              email == '' ? 
-                 null : 
-                {
-                    display: 'none',
-                }
-            "
-            >Email</i
-          >
+          <input type="email" formControlName="email" required />
+          <i>Email</i>
         </div>
 
         <div class="inputBox">
-          <input type="password" required [(ngModel)]="password" required />
-          <i
-            [style]="
-          password == '' ? 
-             null : 
-            {
-                display: 'none',
-            }
-        "
-            >Password</i
-          >
+          <input type="password" required formControlName="password" required />
+          <i>Password</i>
         </div>
 
         <div class="links">
@@ -90,9 +77,9 @@
         </div>
 
         <div class="inputBox">
-          <input type="submit" (click)="logUser()" value="Login" />
+          <input type="submit" value="Login" [disabled]="loginForm.invalid" />
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </section>
