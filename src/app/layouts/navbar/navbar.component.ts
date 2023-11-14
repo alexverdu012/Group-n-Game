@@ -12,9 +12,11 @@ import { UserService } from '../../entities/user/service/user.service';
 })
 export class NavbarComponent {
   navitem = navbar;
-  username?: String = 'Login';
+  username?: String = '';
   id?: String;
   isLogged?: Boolean;
+  isLoading = false;
+
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
@@ -22,13 +24,16 @@ export class NavbarComponent {
   }
 
   public logout() {
+    this.isLoading = true;
     this.userService.logOut().then(() => {
       this.router.navigate(['login']);
       localStorage.setItem('fromLogout', 'yes');
     });
+    this.isLoading = true;
   }
 
   private isLoggedIn() {
+    this.isLoading = true;
     this.userService.isLoggedIn().then((res) => {
       try {
         if (res.data) {
@@ -40,5 +45,6 @@ export class NavbarComponent {
         this.username = 'Login';
       }
     });
+    this.isLoading = false;
   }
 }

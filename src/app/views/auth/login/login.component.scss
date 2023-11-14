@@ -96,12 +96,19 @@ section {
             background: var(--theme-color-3);
             color: var(--text-color);
           }
+
+          input[type="submit"]:disabled {
+            border: 1px solid #999999;
+            background-color: #cccccc;
+            color: #666666;
+          }
           input:focus ~ i,
           input:valid ~ i {
             transform: translateY(-7.5px);
             font-size: 0.8em;
             color: #fff;
           }
+
           i {
             position: absolute;
             left: 0;

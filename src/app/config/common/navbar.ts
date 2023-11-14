@@ -7,7 +7,7 @@ export const navbar = [
   {
     id: 2,
     title: 'Games',
-    slug: '',
+    slug: 'games',
   },
   {
     id: 3,
